@@ -28,10 +28,8 @@ export default function Temp() {
                 country,
                 sunset
             }
-            // console.log(WeatherInfo)
+            console.log(weathermood);
             setinfo(WeatherInfo);
-            console.log(info);
-
 
         }catch(error){
             console.log(error);
@@ -46,7 +44,7 @@ export default function Temp() {
     <>
         <div className="wrap">
             <div className="search">
-                <input type="search" autoFocus placeholder='search..' id='search' className='searchTerm' value={city} onChange={(event)=> setcity(event.target.value)}/>
+                <input type="search" autoFocus placeholder='Enter City' id='search' className='searchTerm' value={city} onChange={(event)=> setcity(event.target.value)}/>
                 <button className="searchButton" type='button' onClick={getWeatherInfo}>Search</button>
             </div>
         </div>

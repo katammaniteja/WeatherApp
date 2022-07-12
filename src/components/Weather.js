@@ -17,7 +17,12 @@ export default function Weather({info}) {
                 case "Clouds":
                     setweatherstate("wi-day-cloudy");
                     break;
-                
+                case "Drizzle":
+                    setweatherstate("wi-day-rain")
+                    break;
+                case "Rain":
+                    setweatherstate("wi-day-thunderstorm")
+                    break;
                 case "Clear":
                     setweatherstate("wi-day-sunny");
                     break;
@@ -25,14 +30,13 @@ export default function Weather({info}) {
                     setweatherstate("wi-day-sunny");
                     break;
             }
-            console.log(weatherstate);
         }
     },[weathermood])
   return (
     <>
       <article className='widget'>
             <div className="weatherIcon">
-                <i className={"wi wi-day-sunny"}></i>
+                <i className={`wi ${weatherstate}`}></i>
             </div>
             <div className="weatherInfo">
                 <div className="temperature">
@@ -51,7 +55,7 @@ export default function Weather({info}) {
             <div className="extra-temp">
                 <div className="temp-info-minmax">
                     <div className="two-sided-section">
-                        <p><i className={`wi ${weatherstate}`}></i></p>
+                        <p><i className={"wi wi-day-sunny"}></i></p>
                         <p className='extra-info-leftside'>
                             {time} <br /> Sunset
                         </p>
